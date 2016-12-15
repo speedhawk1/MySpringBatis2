@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="books">
+    <insert id="add" parameterType="model.Book" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO dbm.books VALUE (NULL,#{bookname},#{writer})
+    </insert>
+    <!--为何query没有变量类定义？-->
+    <select id="query" resultType="model.Book">
+        SELECT * FROM dbm.books ORDER BY id
+    </select>
+    <select id="search" parameterType="int" resultType="model.Book">
+        SELECT * FROM dbm.books WHERE id=#{id}
+    </select>
+    <delete id="remove" parameterType="int">
+        DELETE FROM dbm.books WHERE id=#{id}
+    </delete>
+</mapper>
+
