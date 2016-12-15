@@ -16,5 +16,10 @@
     <delete id="remove" parameterType="int">
         DELETE FROM dbm.books WHERE id=#{id}
     </delete>
+    <update id="update" parameterType="model.Book">
+        UPDATE dbm.books
+        SET bookname = #{bookname},
+            writer = #{writer} WHERE id = #{id}
+    </update>
 </mapper>
 

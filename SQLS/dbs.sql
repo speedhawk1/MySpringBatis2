@@ -11,8 +11,8 @@ CREATE TABLE dbm.users(
 DROP TABLE IF EXISTS dbm.books;
 CREATE TABLE dbm.books(
   id INT AUTO_INCREMENT PRIMARY KEY  COMMENT 'id',
-  bookname VARCHAR(255) NOT NULL ,
-  writer VARCHAR(255)
+  bookname VARCHAR(255) NOT NULL COMMENT 'bookname',
+  writer VARCHAR(255) NOT NULL COMMENT 'writer'
 )
   
 SELECT * FROM dbm.users;
@@ -22,4 +22,4 @@ FROM dbm.books;
 
 INSERT INTO dbm.users VALUES (NULL ,'123','123');
 
-INSERT INTO dbm.books VALUES (null,'test','test');
+TRUNCATE dbm.books;

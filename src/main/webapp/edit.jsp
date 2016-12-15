@@ -16,10 +16,12 @@
     <c:redirect url="${ctx}/index.jsp"/>
 </c:if>
     <form action="${ctx}/books/update" method="post">
-        <input type="hidden" name="id" value="${sessionScope.books.id}">
-        <input type="text" name="bookname" value="${sessionScope.books.bookname}">
-        <input type="text" name="writer" value="${sessionScope.books.writer}">
+        <input type="hidden" name="id" value="${sessionScope.booker.id}">
+        <input type="text" name="bookname" value="${sessionScope.booker.bookname}">
+        <input type="text" name="writer" value="${sessionScope.booker.writer}">
         <input type="submit" value="SAVE">
     </form>
+<br>
+<a href="${ctx}/users/logout">Log out</a>
 </body>
 </html>

@@ -30,7 +30,7 @@ public class MainController extends BaseController{
         if (user != null) {
             user.setPassword(null);
             session.setAttribute("user",user);
-            return "redirect:/home.jsp";
+            return "redirect:/books/query";
         }else{
             request.setAttribute("message","Invalid name or password.");
             return "/index.jsp";
